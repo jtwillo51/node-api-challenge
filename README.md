@@ -40,13 +40,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    express.json and error handling
+
 - [ ] Describe Middleware?
+
+    extra bits of reusable code that can be used to DRY up code
 
 - [ ] Describe a Resource?
 
+    a bit of data, code, etc. that can be used later
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    status codes
+
 - [ ] How can we partition our application into sub-applications?
+
+    by making express act like there are different servers e.g. "/users" and "/items"
 
 ## Minimum Viable Product
 
