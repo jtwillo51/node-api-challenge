@@ -15,12 +15,24 @@ router.post("/", validateAction,(req, res)=>{
     .then(action=>{
         res.json(action)
     })
+    .catch(err =>{
+        console.log(err)
+        res.status(500).json({
+            message: "Error creating action"
+        })
+    })
 })
 
 router.put("/:id", validateID, validateAction,(req, res)=>{
     actions.update(req.params.id, req.body)
     .then(action=>{
         res.json(action)
+    })
+    .catch(err =>{
+        console.log(err)
+        res.status(500).json({
+            message: "Error updating action"
+        })
     })
 })
 
@@ -69,7 +81,7 @@ function validateAction(req, res, next){
         res.status(400).json({
             message: "Must provide name and description"
         })
-    } else if(req.body.name && req.body.description && req.body.notes){
+    } else if(req.body.project_id && req.body.description && req.body.notes){
         next()
     } else{
         res.status(500).json({
